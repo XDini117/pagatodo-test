@@ -1,0 +1,30 @@
+.bankCardSection {
+  padding: 16px;
+}
+
+.bankCardImage {
+  border-radius: 50%;
+  width: 72px;
+  height: 72px;
+}
+
+.bankCardTitleContainer {
+  margin-left: 32px !important;
+}
+
+.bankCardTitle {
+  font-size: 28px !important;
+}
+
+.bankCardDivider {
+  margin: 16px 0px !important;
+}
+
+.detailTitle {
+  font-size: 16px !important;
+  font-weight: bold !important;
+}
+
+.detailItem {
+  margin: 2px 0px;
+}
