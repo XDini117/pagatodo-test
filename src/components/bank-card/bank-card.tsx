@@ -12,13 +12,28 @@ import BankPlaceholder from "../../assets/images/bank-image-placeholder.png";
 
 import styles from "./bank-card.module.css";
 
-import { useBankData } from "../../contexts/bank-data-context";
+import { Bank } from "../../contexts/bank-data-context";
 
-export default function BankCard() {
-  const { bankData } = useBankData();
+export interface BankCardData extends Omit<Bank, "url"> {
+  url?: string;
+}
 
+const bankCardLoadingData: BankCardData = {
+  bankName: "Cargando...",
+  description: "",
+  age: 0,
+  url: BankPlaceholder,
+};
+
+interface BankCardItemProps {
+  bank: BankCardData;
+}
+
+export default function BankCard({
+  bank = bankCardLoadingData,
+}: BankCardItemProps) {
   return (
-    <Paper>
+    <Paper elevation={0} className={styles.bankCardContainer}>
       <Grid container direction="column">
         <Grid item>
           <Grid
@@ -28,15 +43,15 @@ export default function BankCard() {
           >
             <Grid item>
               <img
-                // src={bankData[0].url}
+                // src={bank.url}
                 src={BankPlaceholder}
-                alt={bankData[0].bankName}
+                alt={bank.bankName}
                 className={styles.bankCardImage}
               />
             </Grid>
             <Grid item className={styles.bankCardTitleContainer}>
               <Typography className={styles.bankCardTitle}>
-                {bankData[0].bankName}
+                {bank.bankName}
               </Typography>
             </Grid>
           </Grid>
@@ -53,14 +68,14 @@ export default function BankCard() {
               <BankCardDetail
                 tooltipTitle="Slogan"
                 icon={SloganIcon}
-                detailText={bankData[0].description}
+                detailText={bank.description}
               />
             </Grid>
             <Grid item className={styles.detailItem}>
               <BankCardDetail
                 tooltipTitle="Antigüedad"
                 icon={AgeIcon}
-                detailText={bankData[0].age}
+                detailText={bank.age}
               />
             </Grid>
           </Grid>
