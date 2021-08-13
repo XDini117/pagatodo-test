@@ -17,7 +17,6 @@ export default function BankDataProvider({ children }: BankDataProps) {
     axios
       .get(`${process.env.REACT_APP_API_URL}`)
       .then((res) => {
-        console.log(res.data);
         setBankData(res.data);
       })
       .catch((error) => {
