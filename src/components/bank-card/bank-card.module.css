@@ -1,3 +1,9 @@
+.bankCardContainer {
+  border-width: 1px;
+  border-style: solid;
+  border-color: #2d2d2d50 !important;
+}
+
 .bankCardSection {
   padding: 16px;
 }
@@ -17,7 +23,8 @@
 }
 
 .bankCardDivider {
-  margin: 16px 0px !important;
+  background-color: #2d2d2d30 !important;
+  margin: 8px 0px !important;
 }
 
 .detailTitle {
@@ -27,4 +34,23 @@
 
 .detailItem {
   margin: 2px 0px;
+}
+
+@media (min-width: 600px) and (max-width: 959px) {
+  .bankCardSection {
+    padding: 8px;
+  }
+
+  .bankCardImage {
+    width: 64px;
+    height: 64px;
+  }
+
+  .bankCardTitleContainer {
+    margin-left: 24px !important;
+  }
+
+  .bankCardTitle {
+    font-size: 24px !important;
+  }
 }

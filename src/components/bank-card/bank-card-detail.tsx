@@ -22,7 +22,7 @@ export default function BankCardDetail({
   return (
     <Grid container alignItems="center">
       <Grid item className={styles.detailItemSection}>
-        <Tooltip title={tooltipTitle} placement="bottom-start">
+        <Tooltip title={tooltipTitle} placement="bottom">
           <Icon className={styles.detailIcon} />
         </Tooltip>
       </Grid>

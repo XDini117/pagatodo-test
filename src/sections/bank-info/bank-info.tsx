@@ -1,9 +1,9 @@
-import BankCard from "../../components/bank-card/bank-card";
+import BankCardLayout from "../../components/bank-card/bank-card-layout";
+
+import { useBankData } from "../../contexts/bank-data-context";
 
 export default function BankInfo() {
-  return (
-    <div>
-      <BankCard />
-    </div>
-  );
+  const { bankData } = useBankData();
+
+  return <BankCardLayout bankCardsData={bankData} />;
 }
